@@ -29,7 +29,7 @@ Procédure que j'utilise:
 
 Voici ma Flight Sheet:
 
-![Flight Sheet](/img/FlightSheet1.png)
+![Flight Sheet](/FlightSheet1.png)
 
 > Installation URL
 >
