@@ -74,8 +74,8 @@ Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessTo
 
 ### Que contient l'archive qubic-hive-1.8.0.tar.gz ?
 
-dans cette archive, j'ai développer 3 script bach : h-config.sh, h-run.sh et h-stats.sh
+dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-stats.sh
 
-Il y a aussi le programme officiel de Qubic : qli-Client
+Il y a aussi le programme officiel de Qubic : qli-Client version 1.8.0
 
 Ce projet est Open Source
