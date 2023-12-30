@@ -72,6 +72,8 @@ Pour les oc, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
 
+Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": 20` (par exemple pour 20 threads).
+
 
 ## Configuration par défaut
 
@@ -97,7 +99,6 @@ C'est ton "accessToken" qui fait la différence (choix de la pool).
 
 Pour le minage GPU, le miner prend toutes les GPU disponibles.
 
-Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": 20` (par exemple pour 20 threads).
 
 
 ## Que contient l'archive qubic-hive-1.8.0.tar.gz ?
