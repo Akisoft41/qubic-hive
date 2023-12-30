@@ -2,7 +2,7 @@
 
 Intégration de Qubic dans un Custom Miner HiveOS
 
-### Préparation HiveOS
+## Préparation HiveOS
 
 Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut faire une mise à jour partielle de Ubuntu 18 vers la version 22.
 
@@ -30,7 +30,7 @@ reboot
 Si vous n'utilisez plus le miner Quibic, il est conseillé de remettre une version officielle de HiveOS (de refaire un hive-replace).
 
 
-### Flight Sheet
+## Flight Sheet
 
 Voici ma Flight Sheet:
 
@@ -38,11 +38,11 @@ Voici ma Flight Sheet:
 
 Le script de démarrage prend les valeurs de la flight sheet pour compléter la config par défaut (appsettings_global.json).
 
-### Miner name
+#### Miner name
 
 Ne pas modifier ce champ, il est rempli automatiquement avec l'installation URL.
 
-### Installation URL
+#### Installation URL
 
 `https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.0/qubic-hive-1.8.0.tar.gz`
 
@@ -72,7 +72,7 @@ Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessTo
 
 
 
-### Que contient l'archive qubic-hive-1.8.0.tar.gz ?
+## Que contient l'archive qubic-hive-1.8.0.tar.gz ?
 
 dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-stats.sh
 
