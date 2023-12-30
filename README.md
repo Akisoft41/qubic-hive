@@ -58,9 +58,11 @@ Nom du worker. Valeur de `"alias"` dans appsettings.json
 
 Valeur de `"baseUrl"` dans appsettings.json
 
+`https://mine.qubic.li/` pour la pool `app.qubic.li`
+
 #### Pass:
 
-Pas utilisé
+Pas utilisé.
 
 #### Extra config arguments:
 
@@ -70,6 +72,28 @@ Pour les oc, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
 
+
+## Configuration par défaut
+
+appsettings_global.json :
+
+```
+{
+  "Settings": {
+    "baseUrl": "https://mine.qubic.li/",
+    "amountOfThreads": 0,
+    "payoutId": null,
+    "accessToken": null,
+    "alias": "qubic.li Client",
+    "allowHwInfoCollect": true,
+    "overwrites": {"CUDA": "12"}
+  }
+}
+```
+
+Cette configuration convient pour le minage par CPU ou par GPU.
+
+C'est ton "accessToken" qui fait la différence (choix de la pool).
 
 
 ## Que contient l'archive qubic-hive-1.8.0.tar.gz ?
