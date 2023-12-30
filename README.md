@@ -95,6 +95,10 @@ Cette configuration convient pour le minage par CPU ou par GPU.
 
 C'est ton "accessToken" qui fait la différence (choix de la pool).
 
+Pour le minage GPU, le miner prend toutes les GPU disponibles.
+
+Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": 20` (par exemple pour 20 threads).
+
 
 ## Que contient l'archive qubic-hive-1.8.0.tar.gz ?
 
