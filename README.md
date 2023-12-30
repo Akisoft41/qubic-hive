@@ -68,7 +68,7 @@ Pas utilisé.
 
 Chaque ligne est fusionnée dans `appsettings.json`
 
-Pour les oc, on peut mettre directement une ligne pour la commande `nvtool`
+Pour les OC GPU, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
 
