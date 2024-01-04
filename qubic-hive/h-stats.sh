@@ -42,21 +42,31 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   algo="qubic"
   
   uptime=$(get_miner_uptime)
-  [[ $uptime -lt 60 ]] && head -n 50 $log_basename.log > ${log_basename}_head.log
+  [[ $uptime -lt 60 ]] && head -n 50 $log_name > $log_head_name
+  
+  cpu_count=`cat $log_head_name | tail -n 50 | grep "threads are used" | tail -n 1 | cut -d " " -f3`
+  [[ $cpu_count = "" ]] && cpu_count=0
+  gpu_count=`cat $log_head_name | tail -n 50 | grep "CUDA devices are used" | tail -n 1 | cut -d " " -f3`
+  [[ $gpu_count = "" ]] && gpu_count=0
+  
+  if [ $cpu_count -eq 0 ] && [ $gpu_count -eq 0 ]; then
+    echo ...
+    cat $log_name | grep -E "threads are used|CUDA devices are used" | tail -n 1 > $log_head_name
+    cpu_count=`cat $log_head_name | tail -n 50 | grep "threads are used" | tail -n 1 | cut -d " " -f3`
+    [[ $cpu_count = "" ]] && cpu_count=0
+    gpu_count=`cat $log_head_name | tail -n 50 | grep "CUDA devices are used" | tail -n 1 | cut -d " " -f3`
+    [[ $gpu_count = "" ]] && gpu_count=0
+  fi
   
   cpu_temp=`cpu-temp`
   [[ $cpu_temp = "" ]] && cpu_temp=null
   
   khs=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f11 | awk '{print $1/1000}'`
-  ac=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f6`
+  ac=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f6 | cut -d "/" -f1`
   rj=0
   
-  #cpu_count=`cat $log_head_name | tail -n 50 | grep "threads are used" | tail -n 1 | cut -d " " -f3`
-  #[[ $cpu_count = "" ]] && cpu_count=0
-  gpu_count=`cat $log_head_name | tail -n 50 | grep "CUDA devices are used" | tail -n 1 | cut -d " " -f3`
-  [[ $gpu_count = "" ]] && gpu_count=0
-  
   echo ----------
+  echo cpu_count: $cpu_count
   echo gpu_count: $gpu_count
   echo gpu_stats: $gpu_stats
   echo cpu_indexes_array: $cpu_indexes_array
@@ -65,7 +75,7 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   
   if [[ $gpu_count -eq 0 ]]; then
     # CPU
-    hs[0]=$khs
+    hs[0]=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f8 | awk '{print $1/1000}'`
     temp[0]=$cpu_temp
     fan[0]=""
     bus_numbers[0]="null"

@@ -1,10 +1,10 @@
 # qubic-hive
 
-Intégration de Qubic dans un Custom Miner HiveOS
+Intégration de Qubic dans un *Custom Miner* HiveOS
 
 ## Préparation HiveOS
 
-Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut faire une mise à jour partielle de Ubuntu 18 vers la version 22.
+Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut faire une mise à jour partielle de Ubuntu 18 vers Ubuntu 22.
 
 Procédure que j'utilise:
 
@@ -44,7 +44,7 @@ Ne pas modifier ce champ, il est rempli automatiquement avec l'installation URL.
 
 #### Installation URL
 
-`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.0/qubic-hive-1.8.0.tar.gz`
+`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.0/qubic-hive-1.8.2.tar.gz`
 
 #### Hash algorithm:
 
@@ -72,7 +72,7 @@ Pour les OC GPU, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
 
-Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": 20` (par exemple pour 20 threads).
+Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads).
 
 
 ## Configuration par défaut
@@ -93,18 +93,16 @@ appsettings_global.json :
 }
 ```
 
-Cette configuration convient pour le minage par CPU ou par GPU.
+Ce *Custom Miner* convient pour le minage par CPU ou par GPU.
 
-C'est ton "accessToken" qui fait la différence (choix de la pool).
-
-Pour le minage GPU, le miner prend toutes les GPU disponibles.
+Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 
 
-## Que contient l'archive qubic-hive-1.8.0.tar.gz ?
+## Que contient l'archive qubic-hive-1.8.2.tar.gz ?
 
 dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-stats.sh
 
-Il y a aussi le programme officiel de Qubic : qli-Client version 1.8.0
+Il y a aussi le programme officiel de Qubic : qli-Client
 
 Ce projet est Open Source
