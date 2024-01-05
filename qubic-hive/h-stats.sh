@@ -27,7 +27,7 @@ log_basename="/var/log/miner/custom/custom"
 log_name="$log_basename.log"
 log_head_name="${log_basename}_head.log"
 conf_name="/hive/miners/custom/qubic-hive/appsettings.json"
-custom_version=1.8.0
+custom_version=1.8.2
 
 
 diffTime=$(get_log_time_diff)
