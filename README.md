@@ -68,11 +68,15 @@ Pas utilisé.
 
 Chaque ligne est fusionnée dans `appsettings.json`
 
-Pour les OC GPU, on peut mettre directement une ligne pour la commande `nvtool`
+##### GPU
+Pour les OC **GPU**, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
 
-Pour le minage CPU, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads).
+##### CPU
+Pour le minage **CPU**, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
+
+Si vous utiliser la pool *"qubic.li GPU Mining"*, if faut ajouter `"allowHwInfoCollect": false`.
 
 
 ## Configuration par défaut
