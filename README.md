@@ -110,3 +110,5 @@ dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-
 Il y a aussi le programme officiel de Qubic : qli-Client
 
 Ce projet est Open Source
+Copyright (C) 2023-2024 Pascal Akermann
+GPL-3.0-or-later
