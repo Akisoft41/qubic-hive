@@ -2,6 +2,15 @@
 
 Intégration de Qubic dans un *Custom Miner* HiveOS
 
+web : https://web.qubic.li/
+
+wallet : https://wallet.qubic.li/
+
+pool : https://app.qubic.li/public
+
+miner : https://github.com/qubic-li/client?tab=readme-ov-file#download
+
+
 ## Préparation HiveOS
 
 Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut faire une mise à jour partielle de Ubuntu 18 vers Ubuntu 22.
@@ -109,6 +118,8 @@ dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-
 
 Il y a aussi le programme officiel de Qubic : qli-Client
 
-Ce projet est Open Source
+
+Ce projet est Open Source sous licience GPL-3.0-or-later
+
 Copyright (C) 2023-2024 Pascal Akermann
-GPL-3.0-or-later
+

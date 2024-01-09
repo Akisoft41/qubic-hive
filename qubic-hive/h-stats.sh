@@ -3,7 +3,6 @@
 # You should have received a copy of the GNU General Public License along with qubic-hive-twice. If not, see <https://www.gnu.org/licenses/>
 
 
-
 get_miner_uptime(){
   local a=0
   let a=`stat --format='%Y' $log_name`-`stat --format='%Y' $conf_name`
@@ -32,7 +31,7 @@ log_basename="/var/log/miner/custom/custom"
 log_name="$log_basename.log"
 log_head_name="${log_basename}_head.log"
 conf_name="/hive/miners/custom/qubic-hive/appsettings.json"
-custom_version=1.8.2
+custom_version=1.8.3
 
 
 diffTime=$(get_log_time_diff)
@@ -56,7 +55,7 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   
   if [ $cpu_count -eq 0 ] && [ $gpu_count -eq 0 ]; then
     echo ...
-    cat $log_name | grep -E "threads are used|CUDA devices are used" | tail -n 1 > $log_head_name
+    cat $log_name | grep -E "threads are used|CUDA devices are used" | tail -n 10 > $log_head_name
     cpu_count=`cat $log_head_name | tail -n 50 | grep "threads are used" | tail -n 1 | cut -d " " -f3`
     [[ $cpu_count = "" ]] && cpu_count=0
     gpu_count=`cat $log_head_name | tail -n 50 | grep "CUDA devices are used" | tail -n 1 | cut -d " " -f3`

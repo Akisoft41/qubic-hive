@@ -3,7 +3,6 @@
 # You should have received a copy of the GNU General Public License along with qubic-hive-twice. If not, see <https://www.gnu.org/licenses/>
 
 
-
 conf=`cat /hive/miners/custom/$CUSTOM_NAME/appsettings_global.json | envsubst`
 
 Settings=$(jq -r .Settings <<< "$conf")
