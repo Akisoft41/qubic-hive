@@ -65,8 +65,8 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   cpu_temp=`cpu-temp`
   [[ $cpu_temp = "" ]] && cpu_temp=null
   
-  khs=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f11 | awk '{print $1/1000}'`
-  ac=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f6 | cut -d "/" -f1`
+  khs=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f14 | awk '{print $1/1000}'`
+  ac=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f5 | cut -d "/" -f1`
   rj=0
   
   echo ----------
@@ -79,7 +79,7 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   
   if [[ $gpu_count -eq 0 ]]; then
     # CPU
-    hs[0]=`cat $log_name | tail -n 50 | grep "Search" | tail -n 1 | cut -d " " -f8 | awk '{print $1/1000}'`
+    hs[0]=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f11 | awk '{print $1/1000}'`
     temp[0]=$cpu_temp
     fan[0]=""
     bus_numbers[0]="null"
