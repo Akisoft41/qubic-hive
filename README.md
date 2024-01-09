@@ -45,7 +45,9 @@ Voici ma Flight Sheet:
 
 ![Flight Sheet](/img/FlightSheet1.png)
 
-Le script de démarrage prend les valeurs de la flight sheet pour compléter la config par défaut (appsettings_global.json).
+Le script de démarrage prend les valeurs de la flight sheet pour compléter la config par défaut (`appsettings_global.json`).
+
+A chaque démarrage du miner, le fichier `appsettings.json` est recréé.
 
 ### Miner name
 
@@ -114,12 +116,12 @@ Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 ## Que contient l'archive tar.gz ?
 
-dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-stats.sh
+Dans cette archive, j'ai développé 3 script bash : h-config.sh, h-run.sh et h-stats.sh
 
 Il y a aussi le programme officiel de Qubic : qli-Client
 
 
-Ce projet est Open Source sous licience GPL-3.0-or-later
+Ce projet est Open Source sous licence GPL-3.0-or-later
 
 Copyright (C) 2023-2024 Pascal Akermann
 
