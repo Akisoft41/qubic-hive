@@ -80,7 +80,7 @@ Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 ##### GPU
 Pour les OC **GPU**, on peut mettre directement une ligne pour la commande `nvtool`
 
-Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id"` ou `"accessToken": "_ton_access_token_"`
+Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id_"` ou `"accessToken": "_ton_access_token_"`
 
 ##### CPU
 Pour le minage **CPU**, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
