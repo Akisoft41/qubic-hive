@@ -75,7 +75,7 @@ Pas utilisé.
 
 #### Extra config arguments:
 
-Chaque ligne est fusionnée dans `appsettings.json`
+Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 
 ##### GPU
 Pour les OC **GPU**, on peut mettre directement une ligne pour la commande `nvtool`
