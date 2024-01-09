@@ -112,7 +112,7 @@ Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 
 
-## Que contient l'archive qubic-hive-1.8.2.tar.gz ?
+## Que contient l'archive tar.gz ?
 
 dans cette archive, j'ai développer 3 script bash : h-config.sh, h-run.sh et h-stats.sh
 
