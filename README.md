@@ -47,42 +47,42 @@ Voici ma Flight Sheet:
 
 Le script de démarrage prend les valeurs de la flight sheet pour compléter la config par défaut (appsettings_global.json).
 
-#### Miner name
+### Miner name
 
 Ne pas modifier ce champ, il est rempli automatiquement avec l'installation URL.
 
-#### Installation URL
+### Installation URL
 
 `https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.3/qubic-hive-1.8.3.tar.gz`
 
-#### Hash algorithm:
+### Hash algorithm:
 
 Ce champ n'est pas utilisé, on peut laisser `----`
 
-#### Wallet and worker template:
+### Wallet and worker template:
 
 Nom du worker. Valeur de `"alias"` dans appsettings.json
 
-#### Pool URL:
+### Pool URL:
 
 Valeur de `"baseUrl"` dans appsettings.json
 
 `https://mine.qubic.li/` pour la pool `app.qubic.li`
 
-#### Pass:
+### Pass:
 
 Pas utilisé.
 
-#### Extra config arguments:
+### Extra config arguments:
 
 Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 
-##### GPU
+#### GPU
 Pour les OC **GPU**, on peut mettre directement une ligne pour la commande `nvtool`
 
 Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id_"` ou `"accessToken": "_ton_access_token_"`
 
-##### CPU
+#### CPU
 Pour le minage **CPU**, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
 
 Si vous utiliser la pool *"qubic.li GPU Mining"*, if faut ajouter `"allowHwInfoCollect": false`.
