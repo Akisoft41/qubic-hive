@@ -80,20 +80,23 @@ Pas utilisé.
 Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 
 #### GPU
-Pour les OC **GPU**, on peut mettre directement une ligne pour la commande `nvtool`
-
-Il faut au minimum mettre une ligne `"payoutId": "_ton_payout_id_"` ou `"accessToken": "_ton_access_token_"`
+- Pour les OC, on peut mettre directement une ligne pour la commande `nvtool`
+- Il faut une des ligne 
+  - `"payoutId": "_ton_payout_id_"` ou 
+  - `"accessToken": "_ton_access_token_"`
 
 #### CPU
-Pour le minage **CPU**, il faut ajouter une ligne `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
-
-Si vous utiliser la pool *"qubic.li GPU Mining"*, if faut ajouter `"allowHwInfoCollect": false`.
+Pour le minage **CPU**, il faut ajouter 
+- `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
+- `"allowHwInfoCollect": false`
+- Il faut une des lignes
+  - `"payoutId": "_ton_payout_id_"` ou 
+  - `"accessToken": "_ton_access_token_"`
 
 
 ## Configuration par défaut
 
 appsettings_global.json :
-
 ```
 {
   "Settings": {
@@ -121,7 +124,8 @@ Dans cette archive, j'ai développé 3 script bash : h-config.sh, h-run.sh et h-
 Il y a aussi le programme officiel de Qubic : qli-Client
 
 
+______________
+
 Ce projet est Open Source sous licence GPL-3.0-or-later
 
 Copyright (C) 2023-2024 Pascal Akermann
-
