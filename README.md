@@ -26,7 +26,7 @@ Procédure que j'utilise:
 Flight sheet Unset
 
 hive-replace --list
-1
+2   ## beta ##
 
 selfupgrade
 
@@ -37,6 +37,7 @@ echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.li
 apt update
 
 apt install libc6
+## lors d'une question, accepter la valeur proposée ##
 
 reboot
 ```
