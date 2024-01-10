@@ -10,6 +10,11 @@ pool : https://app.qubic.li/public
 
 miner : https://github.com/qubic-li/client?tab=readme-ov-file#download
 
+Ce *Custom Miner* convient pour le minage par CPU ou par GPU.
+
+Pour le minage GPU, le miner prend toutes les cartes disponibles.
+
+
 
 ## Préparation HiveOS
 
@@ -110,10 +115,6 @@ appsettings_global.json :
   }
 }
 ```
-
-Ce *Custom Miner* convient pour le minage par CPU ou par GPU.
-
-Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 
 

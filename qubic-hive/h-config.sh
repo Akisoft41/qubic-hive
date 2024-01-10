@@ -39,14 +39,15 @@ fi
 
 #merge user config options into main config
 if [[ ! -z $CUSTOM_USER_CONFIG ]]; then
-	while read -r line; do
-		[[ -z $line ]] && continue
+  while read -r line; do
+    [[ -z $line ]] && continue
+    [[ ${line:0:1} = "#" ]] && continue # comment
     if [[ ${line:0:7} = "nvtool " ]]; then
       eval $line
     else
-		  Settings=$(jq -s '.[0] * .[1]' <<< "$Settings {$line}")
+      Settings=$(jq -s '.[0] * .[1]' <<< "$Settings {$line}")
     fi
-	done <<< "$CUSTOM_USER_CONFIG"
+  done <<< "$CUSTOM_USER_CONFIG"
 fi
 
 conf=`jq --null-input --argjson Settings "$Settings" '{$Settings}'`

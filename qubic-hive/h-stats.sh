@@ -42,7 +42,7 @@ maxDelay=250
 if [ "$diffTime" -lt "$maxDelay" ]; then
 
   ver="$custom_version"
-  hs_units="khs"
+  hs_units="hs"
   algo="qubic"
   
   uptime=$(get_miner_uptime)
@@ -65,6 +65,8 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   cpu_temp=`cpu-temp`
   [[ $cpu_temp = "" ]] && cpu_temp=null
   
+  hs_tot=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f11`
+  [[ -z $hs_tot ]] && hs_tot=0
   khs=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f14 | awk '{print $1/1000}'`
   ac=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f5 | cut -d "/" -f1`
   rj=0
@@ -79,7 +81,7 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   
   if [[ $gpu_count -eq 0 ]]; then
     # CPU
-    hs[0]=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f11 | awk '{print $1/1000}'`
+    hs[0]=`cat $log_name | tail -n 50 | grep "Try " | tail -n 1 | cut -d " " -f11`
     temp[0]=$cpu_temp
     fan[0]=""
     bus_numbers[0]="null"
@@ -94,14 +96,22 @@ if [ "$diffTime" -lt "$maxDelay" ]; then
   		gpu_fan=$(jq -c "del(.$cpu_indexes_array)" <<< $gpu_fan) &&
   		gpu_bus=$(jq -c "del(.$cpu_indexes_array)" <<< $gpu_bus)
     fi
+    let gpu_hs_tot=0
     for (( i=0; i < ${gpu_count}; i++ )); do
-      hs[$i]=`cat $log_name | tail -n 50 | grep "GPU#$i" | grep "iters/sec" | tail -n 1 | cut -d ":" -f6 | cut -d " " -f2 | awk '{print $1/1000}'`
+      hs[$i]=`cat $log_name | tail -n 50 | grep "GPU#$i" | grep "iters/sec" | tail -n 1 | cut -d ":" -f6 | cut -d " " -f2`
       [[ -z ${hs[$i]} ]] && hs[$i]=0
+      let gpu_hs_tot=$gpu_hs_tot+${hs[$i]}
       temp[$i]=$(jq .[$i] <<< $gpu_temp)
       fan[$i]=$(jq .[$i] <<< $gpu_fan)
       busid=$(jq .[$i] <<< $gpu_bus)
       bus_numbers[$i]=`echo $busid | cut -d ":" -f1 | cut -c2- | awk -F: '{ printf "%d\n",("0x"$1) }'`
     done
+    if [[ $gpu_hs_tot -eq 0 ]]; then
+      # si on a pas le hs par gpu, prend la moyenne
+      for (( i=0; i < ${gpu_count}; i++ )); do
+        hs[$i]=`printf "%.1f\n" $((10 * $hs_tot / $gpu_count))e-1`
+      done
+    fi
   fi
 
   stats=$(jq -nc \
