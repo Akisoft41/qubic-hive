@@ -46,9 +46,11 @@ Si vous n'utilisez plus le miner Quibic, il est conseillé de remettre une versi
 
 ## Flight Sheet
 
-Voici ma Flight Sheet:
+### CPU
+![Flight Sheet CPU](/img/FlightSheetCPU.png)
 
-![Flight Sheet](/img/FlightSheet1.png)
+### GPU
+![Flight Sheet GPU](/img/FlightSheetGPU.png)
 
 Le script de démarrage prend les valeurs de la flight sheet pour compléter la config par défaut (`appsettings_global.json`).
 
@@ -84,6 +86,8 @@ Pas utilisé.
 
 Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 
+- Il est possible de mettre un commentaire en commençant la ligne par un `#`.
+
 #### GPU
 - Pour les OC, on peut mettre directement une ligne pour la commande `nvtool`
 - Il faut une des ligne 
@@ -97,7 +101,6 @@ Pour le minage **CPU**, il faut ajouter
 - Il faut une des lignes
   - `"payoutId": "_ton_payout_id_"` ou 
   - `"accessToken": "_ton_access_token_"`
-
 
 ## Configuration par défaut
 
