@@ -39,6 +39,11 @@ apt update
 apt install libc6
 ## lors d'une question, accepter la valeur proposée ##
 
+nano /etc/apt/sources.list
+## supprimer la dernière ligne (ligne avec jammy)
+
+apt update
+
 reboot
 ```
 
