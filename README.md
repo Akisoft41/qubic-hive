@@ -18,36 +18,13 @@ Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 ## Préparation HiveOS
 
-Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut faire une mise à jour partielle de Ubuntu 18 vers Ubuntu 22.
-
-Procédure que j'utilise:
+Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut la version beta de Hiveos.
 
 ```
-Flight sheet Unset
-
 hive-replace --list
 2   ## beta ##
-
-selfupgrade
-
-apt update
-apt upgrade
-
-echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
-apt update
-
-apt install libc6
-## lors d'une question, accepter la valeur proposée ##
-
-nano /etc/apt/sources.list
-## supprimer la dernière ligne (ligne avec jammy)
-
-apt update
-
-reboot
 ```
 
-Si vous n'utilisez plus le miner Quibic, il est conseillé de remettre une version officielle de HiveOS (de refaire un hive-replace).
 
 
 ## Flight Sheet
@@ -96,7 +73,7 @@ Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 
 #### GPU
 - Pour les OC, on peut mettre directement une ligne pour la commande `nvtool`
-- Il faut une des ligne 
+- Il faut une des lignes 
   - `"payoutId": "_ton_payout_id_"` ou 
   - `"accessToken": "_ton_access_token_"`
 
