@@ -18,7 +18,7 @@ Pour le minage GPU, le miner prend toutes les cartes disponibles.
 
 ## Préparation HiveOS
 
-Pour pouvoir exécuter le miner Quibic dans HiveOS, il faut la version beta de Hiveos.
+Pour pouvoir exécuter le miner Quibic, il faut la version beta de HiveOS.
 
 ```
 hive-replace --list
