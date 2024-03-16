@@ -22,16 +22,17 @@ get_log_time_diff(){
 # MAIN script body
 #######################
 
-
-#log_name="$MINER_LOG_BASENAME.log"
+#. h-manifest.conf
+#log_basename="$MINER_LOG_BASENAME"
 #conf_name="$CUSTOM_CONFIG_FILENAME"
 #custom_version="$CUSTOM_VERSION"
 
 log_basename="/var/log/miner/custom/custom"
+conf_name="/hive/miners/custom/qubic-hive/appsettings.json"
+custom_version=1.8.8-beta
+
 log_name="$log_basename.log"
 log_head_name="${log_basename}_head.log"
-conf_name="/hive/miners/custom/qubic-hive/appsettings.json"
-custom_version=1.8.4
 
 
 diffTime=$(get_log_time_diff)
