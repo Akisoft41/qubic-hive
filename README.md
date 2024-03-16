@@ -45,7 +45,7 @@ Ne pas modifier ce champ, il est rempli automatiquement avec l'installation URL.
 
 ### Installation URL
 
-`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.5/qubic-hive-1.8.5.tar.gz`
+`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.7/qubic-hive-1.8.7.tar.gz`
 
 ### Hash algorithm:
 
@@ -72,16 +72,16 @@ Chaque ligne (sprarées par un `CR`) est fusionnée dans `appsettings.json`
 - Il est possible de mettre un commentaire en commençant la ligne par un `#`.
 
 #### GPU
-- Pour les OC, on peut mettre directement une ligne pour la commande `nvtool`
-- Il faut une des lignes 
+- Pour les OC, on peut mettre directement une ligne pour la commande `nvtool`.
+- Il faut une des lignes :
   - `"payoutId": "_ton_payout_id_"` ou 
   - `"accessToken": "_ton_access_token_"`
 
 #### CPU
-Pour le minage **CPU**, il faut ajouter 
+Pour le minage **CPU**, il faut ajouter :
 - `"amountOfThreads": n` (remplacer *n* par le nombre de threads)
 - `"allowHwInfoCollect": false`
-- Il faut une des lignes
+- Il faut une des lignes :
   - `"payoutId": "_ton_payout_id_"` ou 
   - `"accessToken": "_ton_access_token_"`
 
