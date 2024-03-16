@@ -45,7 +45,7 @@ Ne pas modifier ce champ, il est rempli automatiquement avec l'installation URL.
 
 ### Installation URL
 
-`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.7/qubic-hive-1.8.7.tar.gz`
+`https://github.com/Akisoft41/qubic-hive/releases/download/v1.8.8_beta/qubic-hive-1.8.8_beta.tar.gz`
 
 ### Hash algorithm:
 
